@@ -4,8 +4,31 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "yarn build && yarn server",
+    "server": "nodemon ./dist/server.js",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"red.bold,blue.bold\"  \"tsc -w\" \"yarn server\"",
+    "build": "rm -rf ./dist/* && tsc && yarn tslint",
+    "tslint": "tslint -c tslint.json -p tsconfig.json"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/body-parser": "^1.17.0",
+    "@types/cors": "^2.8.5",
+    "@types/express": "^4.16.1",
+    "@types/request": "^2.48.1",
+    "@types/request-promise": "^4.1.44",
+    "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.4.5"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^4.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.0",
+    "nodemon": "^1.19.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  }
 }
