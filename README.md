@@ -72,3 +72,22 @@ Then start project using ***yarn start***
 ```
 yarn start
 ```
+
+
+Test the api 
+```
+curl -X POST \
+  http://localhost:3000/api/v1/trailer \
+  -H 'Accept: */*' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -H 'Content-Type: application/json' \
+  -H 'Host: localhost:3000' \
+  -H 'User-Agent: PostmanRuntime/7.13.0' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'cache-control: no-cache' \
+  -H 'content-length: 79' \
+  -d '{ 
+	"movie_url" : "https://content.viaplay.se/pc-se/film/50-first-dates-2004"
+}'
+```
