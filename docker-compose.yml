@@ -1,0 +1,13 @@
+version: '3.5'
+
+services:
+  app:
+    build: .
+    volumes:
+      - '.:/app'
+    ports:
+      - '3000:80'
+    environment:
+      - PORT=80
+      - NODE_ENV=development
+      - TMDB_API_KEY=17ffeed51af342618629bcf28529643b
