@@ -1,11 +1,8 @@
 import express = require("express");
-import { Request, Response } from "express";
+import { TrailerController } from "../controllers";
+import { awaitHandlerFactory } from "../common/routerHelper";
 const router = express.Router();
 
-router.get("/", (req: Request, res: Response) => {
-  
-    return res.json({message : "I am here :)"});
-  
-});
+router.post("/", awaitHandlerFactory(TrailerController.getTrailerByViaPlayURL()));
 
 export default router;
