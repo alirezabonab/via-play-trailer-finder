@@ -33,7 +33,7 @@ export const getTrailerByViaPlayURL = () => {
 
       // return youtube URLS
       // if there is no videos an empty array will be passed to response
-      return res.json(tmdbVideoResult);
+      return res.json({ result: tmdbVideoResult });
     } catch (e) {
       if (e.statusCode === 404) {
         return res

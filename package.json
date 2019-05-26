@@ -35,7 +35,6 @@
     "nodemon": "^1.19.1",
     "ramda": "^0.26.1",
     "request": "^2.88.0",
-    "request-promise": "^4.2.4",
-    "rxjs": "^6.5.2"
+    "request-promise": "^4.2.4"
   }
 }
